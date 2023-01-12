@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-const ShowBook = () => {
+const ShowBook = ({ book }) => {
+
+
   return (
-    <div>ShowBook</div>
+    <div className='book-show'>{book.title}</div>
   )
 }
 
