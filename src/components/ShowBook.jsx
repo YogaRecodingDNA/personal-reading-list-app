@@ -1,10 +1,19 @@
 import React from 'react';
 
-const ShowBook = ({ book }) => {
-
+const ShowBook = ({ book, onDelete }) => {
+  const handleDelete = () => {
+    onDelete(book.id);
+  };
 
   return (
-    <div className='book-show'>{book.title}</div>
+    <div className='book-show'>
+      {book.title}
+      <div className="actions">
+        <button className="delete" onClick={handleDelete}>
+          Delete
+        </button>
+      </div>
+    </div>
   )
 }
 

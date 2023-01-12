@@ -1,10 +1,10 @@
 import React from 'react';
 import ShowBook from './ShowBook';
 
-const BookList = ({ books }) => {
+const BookList = ({ books, onDelete }) => {
 
   const renderedBooks = books.map((book) => {
-    return <ShowBook key={book.id} book={book} />;
+    return <ShowBook onDelete={onDelete} key={book.id} book={book} />;
   });
 
   return (
