@@ -3,29 +3,41 @@ import AddBook from "./components/AddBook";
 import BookList from "./components/BookList";
 
 const App = () => {
-const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState([]);
 
-const addBook = (title) => {
-  const updatedBooks = [
-    ...books,
-    {
-      id: Math.round(Math.random() * 9999),
-      title
-    }
-  ];
+  const addBook = (title) => {
+    const updatedBooks = [
+      ...books,
+      {
+        id: Math.round(Math.random() * 9999),
+        title
+      }
+    ];
 
-  setBooks(updatedBooks);
-};
+    setBooks(updatedBooks);
+  };
+  
+  const editBookById = (id, newTitle) => {
+    const updatedBooks = books.map((book) => {
+      if(book.id === id) {
+        return { ...book, title: newTitle };
+      }
 
-const deleteBookById = (id) => {
-  const updatedBooks = books.filter((book) => book.id !== id);
+      return book;
+    });
 
-  setBooks(updatedBooks);
-};
+    setBooks(updatedBooks);
+  };
+
+  const deleteBookById = (id) => {
+    const updatedBooks = books.filter((book) => book.id !== id);
+
+    setBooks(updatedBooks);
+  };
 
   return (
     <div className="app">
-      <BookList books={books} onDelete={deleteBookById} />
+      <BookList books={books} onEdit={editBookById} onDelete={deleteBookById} />
       <AddBook onAdd={addBook} />
     </div>
   );
