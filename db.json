@@ -1,3 +1,8 @@
 {
-  "books": []
+  "books": [
+    {
+      "title": "Shadow of the Wind",
+      "id": 2
+    }
+  ]
 }
