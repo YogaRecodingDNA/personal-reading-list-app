@@ -1,9 +1,8 @@
-import { useContext } from 'react';
-import BooksContext from '../context/books';
 import ShowBook from './ShowBook';
+import useBooksContext from '../hooks/use-books-context';
 
 const BookList = () => {
-  const { books } = useContext(BooksContext);
+  const { books } = useBooksContext();
 
   const renderedBooks = books.map((book) => {
     return <ShowBook key={book.id} book={book} />;
@@ -23,7 +22,7 @@ export default BookList
 /* COMPONENT HEIRARCHY
 ------------------ APP ----------------------
                 /       \
-         AddBook         BookList
+         AddBook       * BookList *
                         /        \
                 ShowBook          EditBook
 */

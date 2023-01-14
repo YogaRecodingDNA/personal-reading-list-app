@@ -1,8 +1,28 @@
 {
   "books": [
     {
-      "title": "LOTR 2",
-      "id": 1
+      "title": "Shantaram",
+      "id": 11
+    },
+    {
+      "title": "Cali Gurus",
+      "id": 12
+    },
+    {
+      "title": "The Dharma Bums",
+      "id": 16
+    },
+    {
+      "title": "The Spiritual Path",
+      "id": 28
+    },
+    {
+      "title": "Get Lost In Yourself",
+      "id": 30
+    },
+    {
+      "title": "The Grass is Always You",
+      "id": 35
     }
   ]
 }

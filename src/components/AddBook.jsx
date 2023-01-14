@@ -1,9 +1,9 @@
-import { useContext, useState } from 'react';
-import BooksContext from '../context/books';
+import { useState } from 'react';
+import useBooksContext from '../hooks/use-books-context';
 
 const AddBook = () => {
   const [title, setTitle] = useState('');
-  const { addBook } = useContext(BooksContext);
+  const { addBook } = useBooksContext();
 
   const handleChange = (event) => {
     setTitle(event.target.value);
@@ -32,7 +32,7 @@ export default AddBook;
 /* COMPONENT HEIRARCHY
 ------------------ APP ----------------------
                 /       \
-         AddBook         BookList
+       * AddBook *       BookList
                         /        \
                 ShowBook          EditBook
 */

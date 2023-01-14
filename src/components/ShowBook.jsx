@@ -1,10 +1,10 @@
-import { useContext, useState } from 'react';
-import BooksContext from '../context/books';
+import { useState } from 'react';
 import EditBook from './EditBook';
+import useBooksContext from '../hooks/use-books-context';
 
 const ShowBook = ({ book }) => {
   const [viewEdit, setViewEdit] = useState(false);
-  const { deleteBookById } = useContext(BooksContext);
+  const { deleteBookById } = useBooksContext();
 
   const handleDeleteClick = () => {
     deleteBookById(book.id);
@@ -47,5 +47,5 @@ export default ShowBook
                 /       \
          AddBook         BookList
                         /        \
-                ShowBook          EditBook
+              * ShowBook *          EditBook
 */
